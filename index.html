@@ -194,7 +194,7 @@
           if (siswa.success) {
 
             // cek status
-            if (siswa.status.toLowerCase() == "tidak lulus") {
+            if (siswa.status.toLowerCase().trim().includes("tidak")) {
               hasil.className = "hasil tidak-lulus";
             } else {
               hasil.className = "hasil lulus";
@@ -220,7 +220,7 @@
                 style="
                   color:
                   ${
-                    siswa.status.toLowerCase() == "tidak lulus"
+                    siswa.status.toLowerCase().trim().includes("tidak")
                     ? "red"
                     : "green"
                   }
