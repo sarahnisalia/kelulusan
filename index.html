@@ -171,9 +171,11 @@
           nisn;
 
         try {
-          const response = await fetch(url);
-
-          const siswa = await response.json();
+              const response = await fetch(url);
+              
+              const text = await response.text();
+              
+              const siswa = JSON.parse(text);
 
           // jika ditemukan
           if (siswa.success) {
